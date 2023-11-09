@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  
+  <link rel="stylesheet" href="../assets/css/pagina/layout-pagina.css">
+  <link rel="stylesheet" href="../assets/css/background/background-poligono.css">
+  
+  <link rel="stylesheet" href="../assets/css/container/container-cadastro-consulta.css">
+  <link rel="stylesheet" href="../assets/css/form/layout-form.css">
+  <link rel="stylesheet" href="../assets/css/container/cabecalho/cabecalho.css">
+  <link rel="stylesheet" href="../assets/css/container/cabecalho/cabecalho__titulo.css">
+  <link rel="stylesheet" href="../assets/css/container/cabecalho/cabecalho__subtitulo.css">
+  <link rel="stylesheet" href="../assets/css/container/cabecalho/cabecalho__tipo-form.css">
+  
+  <link rel="stylesheet" href="../assets/css/form/input/select-box.css">
+  <link rel="stylesheet" href="../assets/css/form/input/input.css">
+  <link rel="stylesheet" href="../assets/css/form/input/botao.css">
+  <link rel="stylesheet" href="../assets/css/form/link.css">
+  <link rel="stylesheet" href="../assets/css/form/input/input-contas.css">
+  
+  <link rel="stylesheet" href="../assets/css/auxiliar.css">
+  <link rel="stylesheet" href="../assets/css/media_queries.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Cadastro</title>
+</head>
+<body class="pagina">
+  <div class="container-cadastro">
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+      <h1 class="cabecalho__titulo">Cadastro</h1>
+      <h2 class="cabecalho__subtitulo">Oque vamos cadastrar?</h2>
+      <fieldset class="cabecalho__tipo-form">
+        <label for="pessoas" class="radio-label">
+          <input type="radio" name="tipo-form" id="pessoas" checked> Pessoas
+        </label>
+        <label for="alocacoes" class="radio-label">
+          <input type="radio" name="tipo-form" id="alocacoes"> Alocações
+        </label>
+      </fieldset>
+    </header>
+    
+    <!-- Cadastro de Pessoas-->
+    <form method="post" class="form form-pessoas">
+      <fieldset>
+      <input type="text" class="form__input" id="nome" placeholder="Nome Completo" required>
+      <input type="text" class="form__input" id="cpf" maxlength="14" placeholder="CPF" pattern="^(\d{3})[. ]?(\d{3})[. ]?(\d{3})[- ]?(\d{2}$)$" required>
+      <input type="email" class="form__input" id="email" placeholder="Email">
+      <input type="tel" class="form__input" id="telefone" maxlength="14" pattern="^(\(?\d{2}\)?)\s?(9\d{4})[-\s]?(\d{4})$" placeholder="Telefone">
+      <label for="dataInicio">
+        Data Início <input type="date" class="form__input" id="dataInicio" required>
+      </label>
+      <label for="dataFim">
+        Data Fim <input type="date" class="form__input" id="dataInicio">
+      </label>
+      </fieldset>
+      <button type="submit" class="form__botao">Cadastrar</button>
+      <a href="../Menu/index.html" class="link">Voltar ao menu</a>
+    </form>
+
+    <!-- Cadastro de Alocações -->
+    <form method="post" class="form form-alocacoes hidden">
+      <fieldset>
+        <input type="number" id="proprietario" class="form__input" placeholder="Proprietário" required>
+        <input type="number" id="bloco" class="form__input" min="1" placeholder="Bloco" required>
+        <input type="number" id="apt" class="form__input" min="1" placeholder="Apartamento" required>
+      </fieldset>
+      <button type="submit" class="form__botao">Cadastrar</button>
+      <a href="../Menu/index.html" class="link">Voltar ao menu</a>
+    </form>
+  </div>
+  <script src="js/script.js"></script>
+</body> 
+</html>
